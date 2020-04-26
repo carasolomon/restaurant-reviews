@@ -229,4 +229,4 @@ class DBHelper {
 
 }
 
-var hosted = (window.location.hostname === "https://elegant-volhard-861668.netlify.app") ? 'netlify' : '' ;
+var hosted = (window.location.hostname === "elegant-volhard-861668.netlify.app") ? 'netlify' : '' ;
