@@ -12,14 +12,19 @@ class DBHelper {
    * Change this to restaurants.json file location on your server.
    */
   static get DATABASE_URL() {
-    const port = 1337; // Change this to your server port
-    return `http://localhost:${port}/restaurants`;
+    const port = 8000 // Change this to your server port
+    if(hosted) {
+      console.log(window.location.hostname);
+      return `https://https://elegant-volhard-861668.netlify.app/data/restaurants.json`;
+    }else {
+      return `http://localhost:${port}/data/restaurants.json`;
+    }
   }
 
   
   static get DATABASE_REVIEWS_URL() {
-    const port = 1337; // Change this to your server port
-    return `http://localhost:${port}/reviews`;
+    const port = 8000; // Change this to your server port
+    return `http://localhost:${port}/data/reviews`;
   }
 
   /**
@@ -223,3 +228,5 @@ class DBHelper {
   }
 
 }
+
+var hosted = (window.location.hostname === "https://elegant-volhard-861668.netlify.app") ? 'netlify' : '' ;
